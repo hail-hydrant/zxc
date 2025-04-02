@@ -41,7 +41,7 @@ impl<'a> Cursor<'a> {
         self.inner[self.pos..].as_ref()
     }
 
-    // split at current postion and reset
+    // split at current position and reset
     pub fn split_at_current_pos(&mut self) -> BytesMut {
         let pos = self.pos;
         self.reset();
