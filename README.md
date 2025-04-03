@@ -171,7 +171,7 @@ attr tmux vim ffuf sqlmap bsdmainutils
 
 ## Installation
 ### Requirements
-* cargo msrv 1.85.1
+* cargo msrv 1.86.0
 * make
 * openssl
 

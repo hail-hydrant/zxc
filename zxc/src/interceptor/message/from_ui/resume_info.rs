@@ -104,9 +104,7 @@ impl ResumeInfo {
             FtSpecific::WReq {
                 ..
             } => FileType::Wreq,
-            FtSpecific::WRes {
-                ..
-            } => FileType::Wres,
+            FtSpecific::WRes => FileType::Wres,
         }
     }
 

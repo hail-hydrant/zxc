@@ -190,8 +190,10 @@ pub mod tests {
     // Include domains
     #[test]
     fn test_proxyargs_add_new_included_domains_old_no_included_domains() {
-        let mut new = ProxyArgs::default();
-        new.included_domains = Some(vec!["a".to_string()]);
+        let new = ProxyArgs {
+            included_domains: Some(vec!["a".to_string()]),
+            ..Default::default()
+        };
         let old = ProxyArgs::default();
         assert_eq!(new.clone() + old, new);
     }
@@ -208,8 +210,10 @@ pub mod tests {
 
     #[test]
     fn test_proxyargs_add_new_included_domains_old_included_domains() {
-        let mut new = ProxyArgs::default();
-        new.included_domains = Some(vec!["a".to_string()]);
+        let new = ProxyArgs {
+            included_domains: Some(vec!["a".to_string()]),
+            ..Default::default()
+        };
         let old = ProxyArgs {
             included_domains: Some(vec!["b".to_string()]),
             ..Default::default()
@@ -224,8 +228,10 @@ pub mod tests {
     // exclude domains
     #[test]
     fn test_proxyargs_add_new_excluded_domains_old_no_excluded_domains() {
-        let mut new = ProxyArgs::default();
-        new.excluded_domains = Some(vec!["a".to_string()]);
+        let new = ProxyArgs {
+            excluded_domains: Some(vec!["a".to_string()]),
+            ..Default::default()
+        };
         let old = ProxyArgs::default();
         assert_eq!(new.clone() + old, new);
     }
@@ -242,8 +248,10 @@ pub mod tests {
 
     #[test]
     fn test_proxyargs_add_new_excluded_domains_old_excluded_domains() {
-        let mut new = ProxyArgs::default();
-        new.excluded_domains = Some(vec!["a".to_string()]);
+        let new = ProxyArgs {
+            excluded_domains: Some(vec!["a".to_string()]),
+            ..Default::default()
+        };
         let old = ProxyArgs {
             excluded_domains: Some(vec!["b".to_string()]),
             ..Default::default()

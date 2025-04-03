@@ -4,7 +4,7 @@ REQUIRED-BINS := getfattr openssl tmux vim
 CARGO-VERSION := $(shell cargo --version 2>/dev/null)
 
 all: check-binaries vim-features configuration ca build
-push: fmt lint test
+push: check lint test fmt
 
 help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
