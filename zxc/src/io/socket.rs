@@ -1,7 +1,7 @@
 use buffer::{Cursor, Event};
 use thiserror::Error;
 use tokio::io::{
-    AsyncReadExt, {self}
+    AsyncReadExt, {self},
 };
 use tokio::net::TcpStream;
 use tracing::trace;
@@ -55,21 +55,6 @@ pub async fn establish_connection(
 /* Description:
  *      Given a generic type that implements AsyncReadExt and a buffer
  *      (Cursor), read the buffer from the generic type.
- *
- * Args:
- *      stream: &mut T
- *      buf: &mut Cursor
- *
- * Steps:
- *      1. Read the buffer
- *      2. If size, EOF reached , return Event::End
- *      3. Else return Event::Read
- *
- * Returns:
- *      Ok(Event)
- *
- * Error:
- *      std::io::Error [2]
  */
 
 pub async fn fill_buffer<'a, 'b, T>(
